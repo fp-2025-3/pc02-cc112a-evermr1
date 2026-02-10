@@ -1,52 +1,60 @@
 #include <iostream>
-
 using namespace std;
 
-int agregar(int n){
-    int r;
-    for(int i=0;i<n;i++){
-        int codigo[n];
-        int promedio[n];
+
+void duplicar(int *&codigos,int cantidad, int &capacidad, float *&promedios){
+	int capacidad_nueva= capacidad*2;
+	int *codigos_nuevos = new int[capacidad_nueva];
+	float *promedios_nuevos = new float[capacidad_nueva];
+	
+	 for (int i = 0; i < cantidad; i++) {
+        codigos_nuevos[i] = codigos[i];
+        promedios_nuevos[i] = promedios[i];}
+        
+        delete[] codigos;
+        delete[] promedios;
+    
+    codigos=codigos_nuevos;
+    promedios=promedios_nuevos;
+	capacidad= capacidad_nueva;	
+};
+
+
+void agregar(int *&codigos,int &cantidad, int &capacidad, float *&promedios){
+	 if (cantidad == capacidad) {
+        duplicar(codigos,cantidad,capacidad,promedios);
+    }
         cout<<"ingrese codigo: "<<endl;
-        cin>>codigo[i];
+        cin>>codigos[cantidad];
         cout<<"ingrese promedio: "<<endl;
-        cin >> promedio[i];}
-cout<<"desea agregar mas estudiantes ( 1=si 2=no): "<<endl;
-cin>>r;
+        cin >> promedios[cantidad];
+    cantidad++;
+};
 
-switch(r) {
-    case 1: n= n*2; //se duplica la capacidad 
-    return agregar(n);
-    break;
-    case 2: cout<<"memoria llena: lista completa"<<endl;
-    break;
-}}
-
-
-void eliminar( int s, float *promedio , int *codigos){
-
-    for (int i = 0; i < s; i++){
-    if (promedio[i]< 10){
-        promedio [i]='\0';
-        codigos[i]= '\0';}
-    }
-
-    for (int i = 0; i < s; i++)
-    {
-    }
-
+void mostrar(int*codigos, float*promedios,int cantidad){
+	cout<<"estudiantes"<<endl;
+	for(int i=0;i<cantidad;i++){
+		cout<<"codigo: "<<codigos[i]<<"promedio: "<<promedios[i]<<endl;
+	}
 }
 
+
+
+
 int main(){
-int l,s;
-int *codigos = new int [l];
-int *promedios = new int[l];
+	int cantidad=0;
+	int capacidad= 4;
+
+int *cod = new int [capacidad];
+int *prom = new int[capacidad];
+
+agregar(cod,cantidad,capacidad,prom);
+agregar(cod,cantidad,capacidad,prom);
+ mostrar(cod, prom, cantidad);
 
 
-
-
-delete [] codigos;
-delete[] promedios;
+delete [] cod;
+delete[] prom;
 return 0; 
 }
 
