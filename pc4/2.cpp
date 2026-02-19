@@ -23,10 +23,8 @@ for (int j = 0; j < 5; j++) {
 selecciones[j].PG = selecciones[j].PE =selecciones[j].PP = 0; 
 selecciones[j].GF = selecciones[j].GC = 0;}
 
-
-
 for(int j=0;j<5;j++){//5 selecciones
-selecciones[j].nombre = "SELECCION" + to_string(j + 1);;
+selecciones[j].nombre = "SELECCION " + to_string(j + 1);;
 for(int i=0;i<100;i++){
 int favor =rand()%6;//RANGO DE 0 A 5 PARA GOLES A FAVOR Y  EN CONTRA
 int contra =rand()%6;
@@ -67,7 +65,7 @@ void imprimirCampeon(performance*selecciones){
 
 
 int main(){	
-srand(time(NULL));
+srand(time(NULL)); //generar numeros aleatorios
 //reserva de memoria para 5 selecciones , pueden se n seleciones.
 performance *selecciones = new performance[5]; 
 
@@ -76,5 +74,6 @@ cout<<"seleccion "<<"  "<< "PG    " << "PE    " <<"PP    "<<
 completarDatos(selecciones);
 imprimirDatos(selecciones);
 imprimirCampeon(selecciones);
+delete[] selecciones; //liberacion de memoria
     return 0;
 }
