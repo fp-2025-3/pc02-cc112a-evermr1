@@ -16,38 +16,65 @@ int DG ; //diferencia de goles
 float rendimiento;
 int *datos;}; // % de puntos obtenidos sobre el total posible
 
-int main(){	
-srand(time(NULL));
-performance seleccion1;
+
+void completarDatos(performance*selecciones){
+for (int j = 0; j < 5; j++) {
+//Inicializar en cero 
+selecciones[j].PG = selecciones[j].PE =selecciones[j].PP = 0; 
+selecciones[j].GF = selecciones[j].GC = 0;}
 
 
-seleccion1.nombre = "SELECCION 1";
-//PARTIDOS DE LA SELECCION 1 :  
-seleccion1.PG=0;
-seleccion1.PE=0;
-seleccion1.PP=0;
 
+for(int j=0;j<5;j++){//5 selecciones
+selecciones[j].nombre = "SELECCION" + to_string(j + 1);;
 for(int i=0;i<100;i++){
 int favor =rand()%6;//RANGO DE 0 A 5 PARA GOLES A FAVOR Y  EN CONTRA
 int contra =rand()%6;
-seleccion1.GF +=favor;//RANGO DE 0 A 5 PARA GOLES A FAVOR Y  EN CONTRA
-seleccion1.GC +=contra;
+selecciones[j].GF +=favor;//RANGO DE 0 A 5 PARA GOLES A FAVOR Y  EN CONTRA
+selecciones[j].GC +=contra;
 if(favor>contra){  //partidos ganados
-seleccion1.PG+=1;}
+selecciones[j].PG+=1;}
 if(favor==contra){   //partidos empatados
-seleccion1.PE+=1;}
+selecciones[j].PE+=1;}
 if(favor<contra){	//partidos perdidos
-seleccion1.PP+=1;}}
-seleccion1.DG = seleccion1.GF-seleccion1.GC;
-seleccion1.puntajeTotal= seleccion1.PG *3 + seleccion1.PE ;
-seleccion1.rendimiento= (seleccion1.puntajeTotal*100.0)/(100*3);
+selecciones[j].PP+=1;}}
+selecciones[j].DG = selecciones[j].GF-selecciones[j].GC;
+selecciones[j].puntajeTotal= selecciones[j].PG *3 + selecciones[j].PE ;
+selecciones[j].rendimiento= (selecciones[j].puntajeTotal*100.0)/(100*3);
+}};
+
+void imprimirDatos(performance*selecciones){
+for(int j=0;j<5;j++){	
+cout<<selecciones[j].nombre<<": "<<selecciones[j].PG<<  "   " << selecciones[j].PE <<"   "
+<<selecciones[j].PP<<"   "<<selecciones[j].GF<<"    "<< selecciones[j].GC << "    "<<
+selecciones[j].DG<<"     "<<selecciones[j].puntajeTotal<<"    "<<selecciones[j].rendimiento<<endl;
+		
+}};
+
+void imprimirCampeon(performance*selecciones){
+	int m;
+	m=5;
+	for(int j=0;j<m-1;j++){
+	for(int i=0;i<m-j-1;i++){//5 selecciones
+		if(selecciones[i].puntajeTotal<selecciones[i+1].puntajeTotal){
+			performance T=selecciones[i];// para ordenar la estructura la variable temporal tipo permormance
+			selecciones[i]=selecciones[i+1];
+			selecciones[i+1]=T;
+		}}}
+		cout<<"campeon: "<<selecciones[0].nombre<<": "; //el mayor que en la posicion 0
+		cout<<" |  puntaje: "<<selecciones[0].puntajeTotal<<" | "<<
+		"DG:  "<< selecciones[0].DG<< "|  Rendimiento: "<<selecciones[0].rendimiento;}
+
+
+int main(){	
+srand(time(NULL));
+//reserva de memoria para 5 selecciones , pueden se n seleciones.
+performance *selecciones = new performance[5]; 
 
 cout<<"seleccion "<<"  "<< "PG    " << "PE    " <<"PP    "<<
  "GF    " << "GC    " <<"DG    "<< "pts    "<< "Rend(%)    "<<endl;
-cout<<"seleccion1 "<<" "<< seleccion1.PG<<  "   " << seleccion1.PE <<"   "
-<<seleccion1.PP<<"   "<<seleccion1.GF<<"    "<< seleccion1.GC << "    "<<
-seleccion1.DG<<"     "<<seleccion1.puntajeTotal<<"    "<<seleccion1.rendimiento<<endl;
-cout<<"partidos perdidos: "<<seleccion1.PP<<endl;
-
+completarDatos(selecciones);
+imprimirDatos(selecciones);
+imprimirCampeon(selecciones);
     return 0;
 }
