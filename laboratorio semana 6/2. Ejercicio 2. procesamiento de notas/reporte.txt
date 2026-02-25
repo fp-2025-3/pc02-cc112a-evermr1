@@ -1,0 +1,7 @@
+	 REPORTE GENERAL 
+Cantidad de estudiante: 8
+Promedio general: 14.375
+Nota mas alta: 20
+Nota mas baja: 9
+Cantidad de aprobados: 7
+Cantidad de desaprobados: 1
