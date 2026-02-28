@@ -1,7 +1,0 @@
-REPORTE DE ESTUDIANTES
-Total de estudintes: 30
-Aprobados: 17
-Desaprobados: 13
-promedio general del curso1.04875e+08
-Estudiante con mayor nota promedio: 1057694225
-Estudiante con menor nota promedio: 1057640208
