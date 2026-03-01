@@ -1,35 +1,38 @@
  	 REPORTE DE ESTUDIANTES
 CODIGO  NOMBRE     PROMEDIO    CONDICION 
-1018	Daniela	 19.6667	 aprobado
-1003	Luis	 19	 aprobado
-1008	Sofia	 19	 aprobado
-1014	Elena	 19	 aprobado
-1025	Hugo	 18	 aprobado
-1012	Carmen	 17	 aprobado
-1023	Julio	 17	 aprobado
-1030	Monica	 17	 aprobado
-1001	Juan	 15.6667	 aprobado
-1005	Carlos	 15.3333	 aprobado
-1009	Diego	 15	 aprobado
-1016	Patricia	 15	 aprobado
-1028	Claudia	 15	 aprobado
-1020	Paola	 14	 aprobado
-1011	Andres	 13	 aprobado
-1026	Alicia	 13	 aprobado
-1006	Lucia	 12	 aprobado
-1021	Marco	 12	 aprobado
-1017	Fernando	 11	 aprobado
-1002	Maria	 10.6667	 aprobado
-1024	Teresa	 10	 aprobado
-1010	Valeria	 9	 desaprobado
-1013	Ricardo	 9	 desaprobado
-1029	Ivan	 9	 desaprobado
-1004	Ana	 8.33333	 desaprobado
-1022	Rosa	 8	 desaprobado
-1007	Pedro	 6	 desaprobado
-1015	Miguel	 6	 desaprobado
-1027	Bruno	 6	 desaprobado
-1019	Jorge	 5	 desaprobado por reglamento
+1001	Juan	 15.6667  	         aprobado
+1002	Maria	 10.6667  	         aprobado
+1003	Luis	 19  	         aprobado
+1004	Ana	 8.33333  	         desaprobado
+1005	Carlos	 15.3333  	         aprobado
+1006	Lucia	 12  	         aprobado
+1007	Pedro	 6  	         desaprobado
+1008	Sofia	 19  	         aprobado
+1009	Diego	 15  	         aprobado
+1010	Valeria	 9  	         desaprobado
+1011	Andres	 13  	         aprobado
+1012	Carmen	 17  	         aprobado
+1013	Ricardo	 9  	         desaprobado
+1014	Elena	 19  	         aprobado
+1015	Miguel	 6  	         desaprobado
+1016	Patricia	 15  	         aprobado
+1017	Fernando	 11  	         aprobado
+1018	Daniela	 19.6667  	         aprobado
+1019	Jorge	 5  	         desaprobado por reglamento
+1020	Paola	 14  	         aprobado
+1021	Marco	 12  	         aprobado
+1022	Rosa	 8  	         desaprobado
+1023	Julio	 17  	         aprobado
+1024	Teresa	 10  	         aprobado
+1025	Hugo	 18  	         aprobado
+1026	Alicia	 13  	         aprobado
+1027	Bruno	 6  	         desaprobado
+1028	Claudia	 15  	         aprobado
+1029	Ivan	 9  	         desaprobado
+1030	Monica	 17  	         aprobado
+
+
+
 Total de estudiantes: 30
 Aprobados: 21
 Desaprobados sin incluir a los desaprobados por reglamento: 8

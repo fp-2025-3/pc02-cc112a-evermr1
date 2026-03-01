@@ -61,7 +61,7 @@ if(E[d].promedio<10){
 E[d].condicion= "desaprobado";
 }//contador de aprobados
 
-ofstream A2("reporteAlumnos"); //GENERACION DE REPORTE EN en un archivo txt
+ofstream A2("reporteAlumnos.txt"); //GENERACION DE REPORTE EN en un archivo txt
 
 
 for(int d=0;d<a;d++){
