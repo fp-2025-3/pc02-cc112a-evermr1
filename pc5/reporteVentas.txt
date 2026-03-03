@@ -1,0 +1,18 @@
+	 REPORTE GENERAL DE VENTAS
+Total de registros: 150
+Monto total vendido: 3770676.10
+datos del vendedor con mayor recaudación: 
+ID de venta: 65
+ID de vendedor: 3
+ID de producto: 5
+Cantidad: 197
+Precio unitario: 490.00
+ Recaudación: 96530.00
+datos del Producto mas vendido: 
+ID de venta: 56
+ID de vendedor: 4
+ID de producto: 19
+La mayor cantidad es:  
+Cantidad: 200
+Precio unitario: 481.60
+La mayor cantidad es:  200
