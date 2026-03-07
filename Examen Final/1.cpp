@@ -5,9 +5,10 @@ using namespace std;
 int **crearMatriz(int n,int m){
     //reservamemoria dinamica para una matriz nXm
      //n filas , m columnas 
+    int **M =new int *[n];//filas
     for(int i=0;i<n;i++){
-     int **M =new int [m]; 
-    }};
+     M[i] =new int [m];}// columnass
+	 return M;};
 
 void llenarMatriz(int **M,int n, int m){
     for(int i=0;i<n;i++){
@@ -24,15 +25,18 @@ int *sumaFilas(int **M,int n , int m){
     int *S =new int[n];
 
     for(int i=0;i<n;i++){
-        for(int j=1;j<n;j++){
+    	S[i]=0;
+        for(int j=0;j<m;j++){
         S[i]+=M[i][j];}}
+        return S;
     };
 
 //liberar correctamente toda la memoria reservada para la matriz
 void liberarMatriz(int**M,int n){
      for(int i=0;i<n;i++){
       delete[] M[i];
-    };
+    }
+	delete[] M;
     cout<<"memoria liberada "<<endl;
 };
 
@@ -47,16 +51,22 @@ cin>>n;
 cout<<"ingrese m: "<<endl;
 cin>>m;
 
+int **M=crearMatriz(n,m);
+
 crearMatriz(n,m);
-sumaFilas(M,n,m);
-liberarMatriz(M,n);
+llenarMatriz(M,n,m);
+int *S=sumaFilas(M,n,m);
 
 cout<<"vector resultante: [ ";
 for(int i=0;i<n;i++){
-    cout<<S[i]<<" , ";
+    cout<<S[i];
+	if(i<n-1)
+	cout<<" , ";
 }
-cout<<"]";
+cout<<"]"<<endl;
 
+liberarMatriz(M,n);
+delete[] S;
 
     return 0;
 }
